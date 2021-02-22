@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Instruction;
 use Illuminate\Http\Request;
 
 class InstructionsController extends Controller
@@ -13,7 +14,8 @@ class InstructionsController extends Controller
      */
     public function index()
     {
-        //
+        $instr=Instruction::index();
+        return view('home', compact('instr'));
     }
 
     /**
