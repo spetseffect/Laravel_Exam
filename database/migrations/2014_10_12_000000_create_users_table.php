@@ -25,20 +25,20 @@ class CreateUsersTable extends Migration
             });
         }
         //default data
-        DB::table('users')->insert([
-            'name'=>'Admin',
-            'email'=>'admin@admin.dom',
-            'password'=>bcrypt('123'),
-            'created_at'=>date('Y-m-d H:i:s'),
-            'updated_at'=>date('Y-m-d H:i:s'),
-        ]);
-        DB::table('users')->insert([
-            'name'=>'User',
-            'email'=>'user@user.dom',
-            'password'=>bcrypt('123'),
-            'created_at'=>date('Y-m-d H:i:s'),
-            'updated_at'=>date('Y-m-d H:i:s'),
-        ]);
+//        DB::table('users')->insert([
+//            'name'=>'Admin',
+//            'email'=>'admin@admin.dom',
+//            'password'=>bcrypt('123'),
+//            'created_at'=>date('Y-m-d H:i:s'),
+//            'updated_at'=>date('Y-m-d H:i:s'),
+//        ]);
+//        DB::table('users')->insert([
+//            'name'=>'User',
+//            'email'=>'user@user.dom',
+//            'password'=>bcrypt('123'),
+//            'created_at'=>date('Y-m-d H:i:s'),
+//            'updated_at'=>date('Y-m-d H:i:s'),
+//        ]);
     }
 
     /**

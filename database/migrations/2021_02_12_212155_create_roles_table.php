@@ -21,11 +21,11 @@ class CreateRolesTable extends Migration
             });
 
             //default data
-            $arr=[
-                ['id'=>1,'name'=>'user'],
-                ['id'=>2,'name'=>'admin']
-            ];
-            DB::table('roles')->insert($arr);
+//            $arr=[
+//                ['id'=>1,'name'=>'user'],
+//                ['id'=>2,'name'=>'admin']
+//            ];
+//            DB::table('roles')->insert($arr);
         }
     }
 

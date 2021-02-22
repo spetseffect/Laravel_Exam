@@ -21,11 +21,11 @@ class CreateDevicesTable extends Migration
             });
         }
         //default data
-        DB::table('devices')->insert([
-            'name'=>'Холодильник',
-            'created_at'=>date('Y-m-d H:i:s'),
-            'updated_at'=>date('Y-m-d H:i:s'),
-        ]);
+//        DB::table('devices')->insert([
+//            'name'=>'Холодильник',
+//            'created_at'=>date('Y-m-d H:i:s'),
+//            'updated_at'=>date('Y-m-d H:i:s'),
+//        ]);
     }
 
     /**

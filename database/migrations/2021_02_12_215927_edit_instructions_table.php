@@ -18,15 +18,15 @@ class EditInstructionsTable extends Migration
             $table->foreign('device_id')->references('id')->on('devices');
         });
         //default data
-        DB::table('instructions')->insert([
-            'name'=>'Тестовая инструкция',
-            'description'=>'Описание для тестовой инструкции',
-            'filename'=>'1.txt',
-            'author_id'=>1,
-            'device_id'=>1,
-            'created_at'=>date('Y-m-d H:i:s'),
-            'updated_at'=>date('Y-m-d H:i:s'),
-        ]);
+//        DB::table('instructions')->insert([
+//            'name'=>'Тестовая инструкция',
+//            'description'=>'Описание для тестовой инструкции',
+//            'filename'=>'1.txt',
+//            'author_id'=>1,
+//            'device_id'=>1,
+//            'created_at'=>date('Y-m-d H:i:s'),
+//            'updated_at'=>date('Y-m-d H:i:s'),
+//        ]);
     }
 
     /**

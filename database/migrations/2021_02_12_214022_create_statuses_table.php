@@ -21,13 +21,13 @@ class CreateStatusesTable extends Migration
                 //$table->timestamps();
             });
             //default data
-            $arr=[
-                ['id'=>1,'name'=>'Новый'],
-                ['id'=>2,'name'=>'На рассмотрении'],
-                ['id'=>3,'name'=>'Утверждено'],
-                ['id'=>4,'name'=>'Отклонено'],
-            ];
-            DB::table('statuses')->insert($arr);
+//            $arr=[
+//                ['id'=>1,'name'=>'Новый'],
+//                ['id'=>2,'name'=>'На рассмотрении'],
+//                ['id'=>3,'name'=>'Утверждено'],
+//                ['id'=>4,'name'=>'Отклонено'],
+//            ];
+//            DB::table('statuses')->insert($arr);
         }
     }
 
