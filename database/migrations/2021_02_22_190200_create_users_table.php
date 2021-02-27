@@ -20,25 +20,12 @@ class CreateUsersTable extends Migration
                 $table->string('email')->unique();
                 $table->string('password');
                 $table->timestamp('email_verified_at')->nullable();
+                $table->bigInteger('role_id')->unsigned()->default(1);
+                $table->foreign('role_id')->references('id')->on('roles');
                 $table->rememberToken();
                 $table->timestamps();
             });
         }
-        //default data
-//        DB::table('users')->insert([
-//            'name'=>'Admin',
-//            'email'=>'admin@admin.dom',
-//            'password'=>bcrypt('123'),
-//            'created_at'=>date('Y-m-d H:i:s'),
-//            'updated_at'=>date('Y-m-d H:i:s'),
-//        ]);
-//        DB::table('users')->insert([
-//            'name'=>'User',
-//            'email'=>'user@user.dom',
-//            'password'=>bcrypt('123'),
-//            'created_at'=>date('Y-m-d H:i:s'),
-//            'updated_at'=>date('Y-m-d H:i:s'),
-//        ]);
     }
 
     /**
@@ -48,8 +35,9 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyConstraints();
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['role_id']);
+        });
         Schema::dropIfExists('users');
-        Schema::enableForeignKeyConstraints();
     }
 }

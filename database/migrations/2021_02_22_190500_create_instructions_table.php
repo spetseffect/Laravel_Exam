@@ -18,10 +18,13 @@ class CreateInstructionsTable extends Migration
                 $table->id();
                 $table->string('name', 100);
                 $table->string('description', 255);
+                $table->bigInteger('device_id')->unsigned();
                 $table->string('filename', 255);
-                $table->bigInteger('status')->default(1);
                 $table->bigInteger('author_id')->unsigned();
+                $table->bigInteger('status_id')->unsigned()->default(1);
+                $table->foreign('device_id')->references('id')->on('devices');
                 $table->foreign('author_id')->references('id')->on('users');
+                $table->foreign('status_id')->references('id')->on('statuses');
                 $table->timestamps();
             });
         }
@@ -34,6 +37,11 @@ class CreateInstructionsTable extends Migration
      */
     public function down()
     {
+        Schema::table('instructions', function (Blueprint $table) {
+            $table->dropForeign(['device_id']);
+            $table->dropForeign(['author_id']);
+            $table->dropForeign(['status_id']);
+        });
         Schema::dropIfExists('instructions');
     }
 }

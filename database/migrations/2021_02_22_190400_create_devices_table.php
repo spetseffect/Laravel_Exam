@@ -20,12 +20,6 @@ class CreateDevicesTable extends Migration
                 $table->timestamps();
             });
         }
-        //default data
-//        DB::table('devices')->insert([
-//            'name'=>'Холодильник',
-//            'created_at'=>date('Y-m-d H:i:s'),
-//            'updated_at'=>date('Y-m-d H:i:s'),
-//        ]);
     }
 
     /**
