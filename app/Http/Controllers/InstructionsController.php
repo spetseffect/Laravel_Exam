@@ -3,19 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Instruction;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InstructionsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+//     Display a listing of the resource.
+//     @return \Illuminate\Http\Response
     public function index()
     {
+        $isAdmin=Auth::user() ? $this->isAdmin(Auth::user()->getAuthIdentifier()) : false;
+        $isAuth=Auth::user() ? true : false;
         $instr=Instruction::index();
-        return view('home', compact('instr'));
+        return view('home', compact('instr','isAdmin','isAuth'));
     }
 
     /**
@@ -82,5 +83,11 @@ class InstructionsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+//      Return is current user in role "Admin"
+//      @param  int  $id
+    public function isAdmin($id): bool{
+        return User::isAdmin($id);
     }
 }

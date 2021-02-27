@@ -2,8 +2,10 @@
 
 @section('content')
 <div class="container">
+    @if($isAuth)
+    <a class="btn btn-info" href="#">Загрузить новую инструкцию</a>
+    @endif
     <div class="row justify-content-center">
-{{--        <a class="btn btn-info" href="#">Загрузить новую инструкцию</a>--}}
         <table class="table">
             <thead>
             <tr>
@@ -27,8 +29,12 @@
                     <td>{{ $i->device }}</td>
                     <td>
                         <a class="btn btn-success" href="/inst-files/{{ $i->file }}" title="Download" download>&dArr;</a>
+                        @if($isAuth)
                         <a class="btn btn-warning" href="#" title="Edit">&#9998;</a>
+                        @endif
+                        @if($isAdmin)
                         <a class="btn btn-danger" href="#" title="Delete">&#10008;</a>
+                        @endif
                     </td>
                 </tr>
             @endforeach

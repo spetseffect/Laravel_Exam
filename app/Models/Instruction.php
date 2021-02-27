@@ -13,7 +13,7 @@ class Instruction extends Model
     public static function index(){
         $result=DB::table('instructions as i')
             ->join('users as u','u.id','=','i.author_id')
-            ->join('statuses as s','s.id','=','i.status')
+            ->join('statuses as s','s.id','=','i.status_id')
             ->join('devices as d','d.id','=','i.device_id')
             ->select([
                 'i.id as id',
