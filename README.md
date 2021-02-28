@@ -22,4 +22,4 @@
 <li>&#11093; Добавлять/удалять/блокировать/разблокировать пользователей.</li>
 </ul></p>
 
-<img src="DB_schema.png" width="500" height="auto">
+<img src="DB_schema.png" width="500" height="auto" attribute="ненужный">
