@@ -90,4 +90,14 @@ class InstructionsController extends Controller
     public function isAdmin($id): bool{
         return User::isAdmin($id);
     }
+
+    public function search($string){
+
+        //add check for $string
+
+        $isAdmin=Auth::user() ? $this->isAdmin(Auth::user()->getAuthIdentifier()) : false;
+        $isAuth=Auth::user() ? true : false;
+        $instr=Instruction::search($string);
+        return view('instructions.search', compact('instr','isAdmin','isAuth'));
+    }
 }

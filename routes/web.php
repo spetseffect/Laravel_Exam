@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InstructionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\InstructionsController::class, 'index'])->name('home');
+Route::get('/', [InstructionsController::class, 'index'])->name('home');
+Route::get('/search/{string}', [InstructionsController::class, 'search'])->name('home.search');
+
 

@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -18,6 +19,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- TempStyles -->
+    <style>@yield('css')</style>
 </head>
 <body>
     <div id="app">
@@ -82,5 +85,6 @@
             @yield('content')
         </main>
     </div>
+    @yield('script')
 </body>
 </html>
